@@ -1,0 +1,7 @@
+---
+- hosts: transcoders
+  become: yes
+  tasks:
+    - dpkg_selections:
+        name: flussonic
+        selection: hold

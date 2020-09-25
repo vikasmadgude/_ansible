@@ -1,0 +1,18 @@
+##Setup SSH username and PATH for python3
+[transcoders:vars]
+ansible_user='aeon'
+ansible_become=yes
+ansible_become_method=sudo
+
+##Server List
+[backend]
+192.168.1.22
+[transcoders]
+192.168.1.51:2251
+192.168.1.52:2252
+192.168.1.53:2253
+192.168.1.55:2255
+[testserver]
+192.168.1.50:2250
+[production]
+35.200.181.228

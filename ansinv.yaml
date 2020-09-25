@@ -1,0 +1,33 @@
+all:
+  children:
+    transcoders:
+      children:
+        transcoder1:
+          hosts:
+            192.168.1.51:2251:
+        transcoder2:
+          hosts:
+            192.168.1.52:2252:
+        transcoder3:
+          hosts:
+            192.168.1.53:2253:
+        transcoder5:
+          hosts:
+            192.168.1.55:2255:
+    testserver:
+      hosts:
+        192.168.1.50:2250:
+    backend:
+      hosts:
+        192.168.1.22:
+    prod:
+      hosts:
+        35.200.181.228:
+      vars:
+        ansible_python_interpreter: /usr/bin/env /usr/bin/python3
+    desktop:
+      hosts:
+        192.168.1.131:
+      vars:
+        ansible_user: 'nuc'
+        ansible_python_interpreter: /usr/bin/env /usr/bin/python3

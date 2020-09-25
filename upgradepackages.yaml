@@ -1,0 +1,18 @@
+---
+- hosts: transcoders
+  become: yes
+  tasks:
+   - dpkg_selections:
+       name: flussonic
+       selection: hold
+   - name: Update and upgrade
+     apt:
+       update_cache: yes
+       upgrade: "yes"
+       cache_valid_time: 3600
+   - name: Remove useless packages from the cache
+     apt:
+       autoclean: yes
+   - name: Remove dependencies that are no longer required
+     apt:
+       autoremove: yes
