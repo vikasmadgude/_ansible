@@ -1,9 +1,9 @@
 ---
-- hosts: transcoders
+- hosts: db
   become: yes
   tasks:
    - dpkg_selections:
-       name: flussonic
+       name: mysql-5.6
        selection: hold
    - name: Update and upgrade
      apt:
